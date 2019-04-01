@@ -1,4 +1,4 @@
-import {events} from "../src/socket/events/types";
+import {events} from "../src/socket/types";
 
 const SocketClient = require('socket.io-client');
 const client = SocketClient('ws://127.0.0.1:3008?token=game');

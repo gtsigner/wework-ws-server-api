@@ -1,5 +1,5 @@
-import {ClientManager} from "./events/client";
-import {events} from "./events/types";
+import {ClientManager} from "./client";
+import {events} from "./types";
 import {objectToArray} from "../utils/arr";
 
 export enum ClientTypes {

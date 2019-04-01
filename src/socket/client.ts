@@ -1,5 +1,5 @@
 import {events} from "./types";
-import {ClientTypes, SocketManager} from "../index";
+import {ClientTypes, SocketManager} from ".";
 import {WrapperClients, WrapperWeWork} from "./route";
 
 const consola = require('consola');
