@@ -27,7 +27,6 @@ export function WrapperWeWork(manager: ClientManager) {
     });
 
 
-
     //断开链接
     client.on('disconnect', () => {
         timer && clearInterval(timer);
