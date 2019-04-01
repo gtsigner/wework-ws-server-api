@@ -1,0 +1,52 @@
+{
+  "name": "w",
+  "version": "1.0.0",
+  "description": "",
+  "main": "",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node ./build/app.js",
+    "dev": "nodemon --watch src/**/*.ts --exec ts-node ./src/app.ts",
+    "debug": "nodemon --watch src/**/*.ts --exec ts-node ./src/app.ts",
+    "ws:dev": "nodemon --watch src/socket/**/*.ts --exec ts-node ./src/socket/index.ts",
+    "clean": "rm -rf ./build/*",
+    "build": "yarn clean && tsc",
+    "build:exe": "yarn build && nexe ./build/app.js"
+  },
+  "keywords": [],
+  "author": "",
+  "private": true,
+  "dependencies": {
+    "axios": "^0.18.0",
+    "bluebird": "^3.5.2",
+    "cheerio": "^1.0.0-rc.2",
+    "consola": "^2.3.0",
+    "dayjs": "^1.7.8",
+    "eventemitter3": "^3.1.0",
+    "iconv-lite": "^0.4.24",
+    "koa": "^2.6.2",
+    "koa-body": "^4.0.6",
+    "koa-bodyparser": "^4.2.1",
+    "koa-json": "^2.0.2",
+    "koa-jwt": "^3.5.1",
+    "koa-router": "^7.4.0",
+    "koa-socket": "^4.4.0",
+    "mongoose": "^5.4.0",
+    "mongoose-paginate-v2": "^1.0.16",
+    "node-schedule": "^1.3.1",
+    "qs": "^6.6.0",
+    "socket.io": "^2.2.0",
+    "websocket": "^1.0.28",
+    "winston": "^3.1.0",
+    "xml-js": "^1.6.8"
+  },
+  "devDependencies": {
+    "nexe": "^3.0.0-beta.14",
+    "nodemon": "^1.18.4",
+    "ts-node": "^7.0.1",
+    "type-is": "^1.6.16",
+    "typed-socket.io": "^0.5.6",
+    "typescript": "^3.2.2",
+    "validator": "^10.8.0"
+  }
+}

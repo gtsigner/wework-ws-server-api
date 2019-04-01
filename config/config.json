@@ -1,0 +1,17 @@
+{
+  "server": {
+    "port": 3018,
+    "access_token": "demo"
+  },
+  "jwtSecret": "qR7mRHqlVO,ERflUmBrSd7Q{w}Qgom",
+  "mongo": {
+    "uri": "mongodb://127.0.0.1/wx_server"
+  },
+  "app": {
+    "root": "./",
+    "debug": true
+  },
+  "logger": {
+    "path": "./logs/"
+  }
+}
