@@ -8,7 +8,6 @@ export enum ClientTypes {
     client = 'client',
 }
 
-process.env.DEBUG = "socket.io:*";
 export class SocketManager {
     public readonly clients: any = {};
     public readonly io: any;
