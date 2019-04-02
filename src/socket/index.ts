@@ -19,6 +19,9 @@ export class SocketManager {
         this.app = io.app;
         this.socket = io.socket;
         io.on('connection', (context: any) => {
+            context.socket.on('fuck.pong', async (res) => {
+                console.log('fuck.pong', res);
+            });
             const manager = new ClientManager(context, this);
             this.clients[manager.id] = manager;
         });

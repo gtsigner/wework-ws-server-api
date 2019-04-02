@@ -3,7 +3,7 @@ import {events} from "./socket/types";
 
 const schedule = require('node-schedule');
 
-// process.env.DEBUG = "socket.io:*";
+process.env.DEBUG = "socket.io:*";
 export default function startTask(app: any) {
     const manager: SocketManager = app.io.manager;
     const job = schedule.scheduleJob('*/4 * * * * *', async () => {
@@ -16,9 +16,9 @@ export default function startTask(app: any) {
 
             //获取会话列表
             // client.socket.emit("wk.get_conversation_list", {}, (data) => {
-            //     if(data != '') {
+            //     if (data != '') {
             //         data = JSON.parse(data);
-            //         console.log(data);
+            //         console.log(data[0]);
             //     }
             // });
 
@@ -63,7 +63,7 @@ export default function startTask(app: any) {
 
             //发送文本消息到会话
             // client.socket.emit("wk.send_text_message_to_conversation", {
-            //     "remoteId": "1970325075060956", //会话id
+            //     "remoteId": "7881302187914621", //会话id
             //     "textMessage": "你好，这是测试文本消息" //文本消息
             // });
 
@@ -77,8 +77,8 @@ export default function startTask(app: any) {
 
             //发送名片到会话
             // client.socket.emit('wk.send_personal_card_message_to_conversation', {
-            //     remoteId: '1970325075060956',//会话id
-            //     wantSenduserRemoteId: '1688851301431977',//用户id
+            //     remoteId: '7881302187914621',//会话id
+            //     wantSenduserRemoteId: '7881302187914621',//用户id
             // })
 
 
@@ -91,7 +91,7 @@ export default function startTask(app: any) {
 
             //发送卡片链接到会话
             // client.socket.emit('wk.send_link_message_to_conversation', {
-            //     remoteId: '1970325075060956', //会话id
+            //     remoteId: '7881302187914621', //会话id
             //     title: '123', //标题
             //     desc: '123', //描述
             //     url: '123', //链接

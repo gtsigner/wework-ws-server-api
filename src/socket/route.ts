@@ -23,9 +23,11 @@ export function WrapperWeWork(manager: ClientManager) {
      * 收到新消息
      */
     client.on("wk.new_message", async (res) => {
+        //好友请求：{"applyRequest":"Godtoy请求添加你为联系人","conversationId":0,"senderRemoteId":0,"senderTime":0,"type":-1}
         console.log(res);
     });
 
+  
 
     //断开链接
     client.on('disconnect', () => {
