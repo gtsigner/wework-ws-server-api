@@ -35,6 +35,7 @@ export default function startTask(app: any) {
                     remoteId: 7881299744907850 }
                 ]
              */
+            console.log("-----------");
             // client.socket.emit("wk.get_conversation_list", {}, (data) => {
             //     if(data != '') {
             //         data = JSON.parse(data);
@@ -53,7 +54,7 @@ export default function startTask(app: any) {
              */
             // client.socket.emit("wk.get_customer_list", {}, (data) => {
             //     if(data != ''){
-            //        c
+            //         data = JSON.parse(data);
             //         console.log(data);
             //     }
             // });
@@ -120,6 +121,18 @@ export default function startTask(app: any) {
             //     }
             // });
 
+
+            //发送图片消息到会话
+            // client.socket.emit("wk.send_image_to_conversation", {
+            //     "remoteId": "1970325075060956", //会话id
+            //     "picUrl": "https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=3817872360,2010503726&fm=26&gp=0.jpg" //图片链接
+            // });
+
+            //发送图片消息到个人
+            client.socket.emit("wk.send_image_to_member", {
+                "remoteId": "1688851301431977", //用户id
+                "picUrl": "https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=3817872360,2010503726&fm=26&gp=0.jpg" //图片链接
+            });
             
             //发送文本消息到会话
             // client.socket.emit("wk.send_text_message_to_conversation", {
