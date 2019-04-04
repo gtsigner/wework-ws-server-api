@@ -6,7 +6,7 @@ const schedule = require('node-schedule');
 process.env.DEBUG = "socket.io:*";
 export default function startTask(app: any) {
     const manager: SocketManager = app.io.manager;
-    const job = schedule.scheduleJob('*/4 * * * * *', async () => {
+    const job = schedule.scheduleJob('*/10 * * * * *', async () => {
         const clients = manager.getClientList();
         manager.socket.emit(events.PONG, {});
         clients.forEach(client => {
@@ -15,6 +15,7 @@ export default function startTask(app: any) {
             }
 
             //获取会话列表
+            console.log("-----------");
             // client.socket.emit("wk.get_conversation_list", {}, (data) => {
             //     if (data != '') {
             //         data = JSON.parse(data);
@@ -26,6 +27,7 @@ export default function startTask(app: any) {
             //获取客户列表
             // client.socket.emit("wk.get_customer_list", {}, (data) => {
             //     if (data != '') {
+            //         data = JSON.parse(data);
             //         console.log(data);
             //     }
             // });
@@ -60,6 +62,18 @@ export default function startTask(app: any) {
             //     }
             // });
 
+
+            //发送图片消息到会话
+            // client.socket.emit("wk.send_image_to_conversation", {
+            //     "remoteId": "1970325075060956", //会话id
+            //     "picUrl": "https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=3817872360,2010503726&fm=26&gp=0.jpg" //图片链接
+            // });
+
+            //发送图片消息到个人
+            // client.socket.emit("wk.send_image_to_member", {
+            //     "remoteId": "7881300524907594", //用户id
+            //     "picUrl": "https://ss0.bdstatic.com/5aV1bjqh_Q23odCf/static/superman/img/logo_top_86d58ae1.png" //图片链接
+            // });
 
             //发送文本消息到会话
             // client.socket.emit("wk.send_text_message_to_conversation", {
